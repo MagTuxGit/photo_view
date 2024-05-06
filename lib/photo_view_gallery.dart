@@ -117,6 +117,7 @@ class PhotoViewGallery extends StatefulWidget {
     this.scrollDirection = Axis.horizontal,
     this.customSize,
     this.allowImplicitScrolling = false,
+    this.pageSnapping = true,
   })  : itemCount = null,
         builder = null,
         super(key: key);
@@ -141,6 +142,7 @@ class PhotoViewGallery extends StatefulWidget {
     this.scrollDirection = Axis.horizontal,
     this.customSize,
     this.allowImplicitScrolling = false,
+    this.pageSnapping = true,
   })  : pageOptions = null,
         assert(itemCount != null),
         assert(builder != null),
@@ -194,6 +196,8 @@ class PhotoViewGallery extends StatefulWidget {
   /// When user attempts to move it to the next element, focus will traverse to the next page in the page view.
   final bool allowImplicitScrolling;
 
+  final bool pageSnapping;
+
   bool get _isBuilder => builder != null;
 
   @override
@@ -237,6 +241,7 @@ class _PhotoViewGalleryState extends State<PhotoViewGallery> {
         scrollDirection: widget.scrollDirection,
         physics: widget.scrollPhysics,
         allowImplicitScrolling: widget.allowImplicitScrolling,
+        pageSnapping: widget.pageSnapping,
       ),
     );
   }
@@ -280,6 +285,7 @@ class _PhotoViewGalleryState extends State<PhotoViewGallery> {
             controller: pageOption.controller,
             scaleStateController: pageOption.scaleStateController,
             customSize: widget.customSize,
+            semanticLabel: pageOption.semanticLabel,
             gaplessPlayback: widget.gaplessPlayback,
             heroAttributes: pageOption.heroAttributes,
             scaleStateChangedCallback: scaleStateChangedCallback,
@@ -322,6 +328,7 @@ class PhotoViewGalleryPageOptions {
     Key? key,
     required this.imageProvider,
     this.heroAttributes,
+    this.semanticLabel,
     this.minScale,
     this.maxScale,
     this.initialScale,
@@ -343,6 +350,7 @@ class PhotoViewGalleryPageOptions {
 
   PhotoViewGalleryPageOptions.customChild({
     required this.child,
+    this.semanticLabel,
     this.childSize,
     this.heroAttributes,
     this.minScale,
@@ -367,6 +375,9 @@ class PhotoViewGalleryPageOptions {
 
   /// Mirror to [PhotoView.heroAttributes]
   final PhotoViewHeroAttributes? heroAttributes;
+
+  /// Mirror to [PhotoView.semanticLabel]
+  final String? semanticLabel;
 
   /// Mirror to [PhotoView.minScale]
   final dynamic minScale;

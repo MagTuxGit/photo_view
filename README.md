@@ -1,6 +1,6 @@
 # Flutter Photo View 
 
-[![Tests status](https://img.shields.io/github/workflow/status/bluefireteam/photo_view/Test/master?label=tests)](https://github.com/bluefireteam/photo_view/actions) [![Pub](https://img.shields.io/pub/v/photo_view.svg?style=popout)](https://pub.dartlang.org/packages/photo_view) [![Chat](https://img.shields.io/discord/509714518008528896)](https://discord.gg/pxrBmy4)
+[![Tests status](https://img.shields.io/github/actions/workflow/status/bluefireteam/photo_view/ci.yml?branch=master)](https://github.com/bluefireteam/photo_view/actions) [![Pub](https://img.shields.io/pub/v/photo_view.svg?style=popout)](https://pub.dartlang.org/packages/photo_view) [![Chat](https://img.shields.io/discord/509714518008528896)](https://discord.gg/pxrBmy4)
 
 A simple zoomable image/content widget for Flutter.
 
@@ -13,7 +13,7 @@ Even though being super simple to use, PhotoView is extremely customizable thoug
 
 ## Installation
 
-Add `photo_view` as a dependency in your pubspec.yaml file ([what?](https://flutter.io/using-packages/)).
+Add `photo_view` as a dependency in your pubspec.yaml file.
 
 Import Photo View:
 ```dart
